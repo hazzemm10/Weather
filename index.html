@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Weather</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg p-0">
+      <div class="container">
+        <a class="navbar-brand px-5 d-flex" href="#">
+          <img src="images/logo (1).png" width="64" height="38" alt="" />
+          <div class="vstack px-2 text-white">
+            <h1 class="h5 mb-0">Weather</h1>
+            <small class="site-content">tagline goes here</small>
+          </div>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link rounded-5 active" aria-current="page" href="#"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link rounded-5" aria-current="page" href="#"
+                >News</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link rounded-5" aria-current="page" href="#"
+                >Live cameras</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link rounded-5" aria-current="page" href="#"
+                >Photos</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link rounded-5" aria-current="page" href="#"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="body-content">    
+        <div class="container">
+          <div class="find-location w-100">
+            <div class=" px-4">
+              <form class="position-relative">
+                <input
+                  type="search"
+                  id="searchLocation"
+                  class="form-control rounded-5 text-white p-3"
+                  placeholder="Find your location..."
+                />
+                <input
+                  type="button"
+                  id="submit"
+                  value="Find"
+                  class="form-control rounded-5 text-white p-2"
+                />
+              </form>
+            </div>
+          </div>
+            <!-- Today's Card -->
+          <div class="city-temp d-flex row justify-content-center hstack gap-4">
+          
+            <div class="card border-0 p-0 col-xl-4 " style="max-width: 23rem ;">
+              <div
+                class="py-2 day-and-date d-flex justify-content-between" 
+              >
+                <p class="mb-0 px-3" id="today"></p>
+                <p class="mb-0 px-3" id="today-date"></p>
+              </div>
+
+              <div class="card-body temp-datails">
+                <p id="location" class="fs-4 mb-4"></p>
+                <div class="d-flex row justify-content-between align-items-center">
+                  <div class=" d-flex col-md-8">
+                    <h2 id="today-degree" class=""></h2>
+                    <h2 class="deg"><sup>o</sup>C</h2>
+                  </div>
+                 <div class="col-md-3 offset-md-1">
+                  <img width="80" height="80" id="today-icon"  />
+                 </div>
+                </div>
+                <p id="today-description" class="py-4"></p>
+                <div class="details d-flex ">
+                 <div class="px-3 fa-1x"> <i class="fas fa-umbrella pr-1"></i>
+                  <span id="humidty"></span><span>%</span></div>
+
+                  <div class="px-3 fa-1x"><i class="fas fa-wind pl-3 pr-1"></i>
+                    <span id="wind"></span><span>km/h</span></div>
+
+                  <div class="px-3 fa-1x"><i class="far fa-compass pl-3 pr-1"></i>
+                    <span id="compass"></span></div>
+                </div>
+              </div>
+            </div>
+            <div class="card border-0 p-0 col-xl-4 text-center" style="max-width: 23rem ;">
+              <div class=" day-and-date text-center py-2" style="background-color: #222530;">
+                <p id="nextDay" class="nextDay mb-0"></p>
+              </div>
+
+              <div class="card-body temp-datails" style="background-color: #262936;">
+                <div>
+                  <img id="nextDay-icon" class="nextDay-icon" width="90" />
+                </div>
+                <h2 id="max-degree" class="max-degree d-inline-block"></h2>
+                <h2 class="d-inline-block"><sup>o</sup>C</h2>
+                <br />
+                <p id="min-degree" class="min-degree d-inline-block lead fw-medium"></p>
+                <p class="d-inline-block lead fw-medium"><sup>o</sup>C</p>
+                <p id="nextDay-description" class="nextDay-description"></p>
+              </div>
+            </div>
+            <div class="card border-0 p-0 col-xl-4 text-center" style="max-width: 23rem ;">
+              <div class=" day-and-date text-center py-2">
+                <p id="afterNextDay" class="nextDay mb-0"></p>
+              </div>
+
+              <div class="card-body temp-datails">
+                <div>
+                  <img id="afterNextDay-icon" class="nextDay-icon" width="90" />
+                </div>
+                <h2 id="afterNextDay-max" class="max-degree d-inline-block"></h2>
+                <h2 class="d-inline-block"><sup>o</sup>C</h2>
+                <br />
+                <p id="afterNextDay-min" class="min-degree d-inline-block lead fw-medium"></p>
+                <p class="d-inline-block lead fw-medium"><sup>o</sup>C</p>
+                <p id="afterNextDay-desc" class="nextDay-description"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <footer class="my-5 py-5 ">
+          <div class="container">
+           <div class=" text-white text-center d-flex row justify-content-center align-items-center px-4">
+            <div class="col-lg-8">
+              <form class="position-relative ">
+                <input
+                  type="search"
+                  id="Subscribe"
+                  class="form-control rounded-5 text-white p-3"
+                  placeholder="Enter your email "/>
+                <input
+                  type="button"
+                  id="submit"
+                  value="Subscribe"
+                  class="form-control rounded-5 text-white p-2"
+                />
+              </form>
+            </div>
+           <div class="social col-lg-4 d-flex justify-content-center align-items-center pt-3 pt-lg-0">
+             <span><i class="fab fa-facebook-f"></i></span>
+             <span><i class="fab fa-twitter"></i></span>
+             <span><i class="fab fa-google-plus-g"></i></span>
+             <span><i class="fab fa-pinterest"></i></span>
+          </div>
+           </div>
+            <div class=" pt-5 ps-5">
+              <p>Copyright © 2023 Designed by Hazem Goda. All rights reserved</p>
+            </div>
+          </div>
+        </footer>
+   
+    </section>
+
+   
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js" type="module"></script>
+  </body>
+</html>
+
